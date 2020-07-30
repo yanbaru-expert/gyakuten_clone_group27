@@ -1,0 +1,2 @@
+class AwxText < ApplicationRecord
+end
