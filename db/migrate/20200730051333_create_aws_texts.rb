@@ -1,6 +1,6 @@
-class CreateAwxTexts < ActiveRecord::Migration[6.0]
+class CreateAwsTexts < ActiveRecord::Migration[6.0]
   def change
-    create_table :awx_texts do |t|
+    create_table :aws_texts do |t|
       t.string :title
       t.text :content
 
