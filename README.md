@@ -16,3 +16,7 @@ bundle install
 yarn install --check-files
 rails db:create db:migrate
 ```
+
+### 初期データ投入方法
+
+- rake -T | grep import コマンドで確認できます

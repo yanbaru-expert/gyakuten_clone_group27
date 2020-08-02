@@ -1,4 +1,4 @@
-require "import.rb"
+require "import"
 namespace :import_csv do
     desc "AWSテキストデータをインポートするタスク"
     task aws_texts: :environment do
