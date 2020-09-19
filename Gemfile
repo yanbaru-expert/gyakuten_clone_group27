@@ -15,6 +15,11 @@ gem 'bootsnap', '>= 1.4.2', require: false
 #管理者画面
 gem 'activeadmin'
 
+# markdown
+gem 'redcarpet', '~> 2.3.0'
+# シンタックスハイライト
+gem 'coderay'
+
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

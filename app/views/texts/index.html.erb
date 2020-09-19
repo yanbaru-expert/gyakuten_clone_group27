@@ -12,9 +12,7 @@
     <% @texts.each.with_index(1) do |text, i| %>
       <tr>
         <th scope="row" class="text-right"><%= i %></th>
-       
-        <td class="break-word"><%= text.title %>
-       
+        <td class="break-word"><%= link_to text.title, "/texts/#{text.id}" %>
           <% end %>
       </tr>
   </tbody>
