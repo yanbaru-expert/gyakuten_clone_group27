@@ -1,0 +1,2 @@
+class AwsTextsController < ApplicationController
+end

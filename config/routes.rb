@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
   devise_for :users
   root to: "movies#index"
-  resources :texts
+  resources :texts, only: [:index, :show]
+  # get  " /texts/#{text.id}"  => "texts#show"
   
 end
