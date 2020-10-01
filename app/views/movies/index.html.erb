@@ -1,0 +1,9 @@
+<div class="p-5 mx-5">
+  <tbody>
+    <% @movies.each.with_index(1) do |movie, i| %>
+      <div class="embed-responsive embed-responsive-16by9">
+        <iframe class="embed-responsive-item" src="<%= movie.url %>" allowfullscreen></iframe>
+      </div>
+    <% end %>
+  </tbody>
+</div>
