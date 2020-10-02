@@ -3,10 +3,7 @@ Rails.application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   devise_for :users
-  root to: "texts#index"
+  root to: "movies#index"
   resources :aws_texts
-
-  resources :movies do
-    collection { post :import }
-  end
+  resources :movies, only: [:index, :show]
 end
