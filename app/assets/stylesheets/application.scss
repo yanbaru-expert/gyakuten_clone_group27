@@ -13,3 +13,11 @@
 .alert-alert {
   @extend .alert-danger;
 }
+
+body{ 
+  padding-top: 60px; 
+}
+
+.movie-body {
+  height: 100px;
+}
