@@ -1,0 +1,449 @@
+genre,title,content
+Basic,Macのショートカットキー,"パソコンになれてないなら、まずはショートカットキーから使えるようにしていきましょう。ここにあげてあるショートカットキーを使えないと、プログラミングの学習効率は全く上がらないです。
+プログラマーなるなら必須中の必須なので、ぜひ使いこなせるようにしてください。絶対にこれだけは覚えて！というショートカットキーは以下の通り。
+上書き保存
+```
+command + s
+```
+コピー
+```
+command + c
+```
+カット
+```
+command + x
+```
+ペースト
+```
+command + v
+```
+更新
+```
+command + r
+```
+新しいウインドウを開く（ブラウザ、テキストエディタなど）
+```
+command + t
+```
+新規で開く（ブラウザ、テキストエディタなど）
+```
+command + n
+```
+アプリの切り替え
+```
+shift + tab
+```
+# まとめ
+パソコンの操作スピードを上げるためにも、ショートカットキーを活用することはとても重要になってきます。特に、コピー&ペーストや上書き保存は、ショートカットキーを使用するのとそうでないのでは大きな差が出てくるので、ぜひ使えるようにしておきましょう。
+"
+Basic,Linuxコマンド,"Linuxコマンドは、Ruby on Railsアプリを開発するときにもよく使うコマンドです。Macでプログラミングを学ぶ際に、このLinuxコマンドの知識が必須となりますので、一つ一つ確認していきましょう。
+また、Linuxコマンドにはたくさんの種類がありますが、こちらではよく使用するコマンドを抽出して載せるようにします。上に書いてあるものから順に覚えて行くと無駄なく学習することができます。
+## cd
+ディレクトリ間を移動するときのコマンドは以下のようになります。 `directory_name` には、自分が移動したいディレクトリの名前を入れましょう。
+```
+cd directory_name
+```
+ためしに、 `cd` コマンドを利用して `desktop` へ移動してみましょう。
+```
+cd desktop
+```
+コマンドを実行した後のターミナルの表示に `desktop` という表示が含まれていれば移動は成功です。ターミナルでは、このように `cd` コマンドを利用してパソコン内を移動します。非常によく利用するコマンドなので、是非使えるようにしておきましょう。
+```
+MacBook-Pro-2:desktop your_name$
+```
+## ls
+現在操作を行なっているディレクトリにあるファイルや、他のディレクトリを一覧表示するためには`ls`コマンドを実行します。 `cd` コマンドでディレクトリ間の移動を行い、 `ls` コマンドで操作したいディレクトリやファイルが存在するかどうかを調べるというのがよくある使い方です。
+```
+ls
+```
+## pwd
+ターミナル上で操作対象となっているディレクトリの場所を表示するコマンドです。これを実行すると、ディレクトリのパスが表示されます。
+```
+pwd
+```
+実行結果
+```
+/Users/yoshito/desktop
+```
+## touch
+新しいファイルを作成するときには`touch`コマンドを使用します。`directory_name`には自分が作成したいファイル名を拡張子を含めて指定します。
+```
+touch file_name
+```
+例
+```
+touch sample.rb
+```
+## mkdir
+新しいディレクトリを作成するときは`mkdir`コマンドを使用します。`directory_name`には自分が作成したいディレクトリ名を指定します。
+```
+mkdir directory_name
+```
+例
+```
+mkdir sample
+```
+# まとめ
+Linuxコマンドは、Macの操作をする上ではとても重要なコマンドとなります。プログラミングをやるときにも、これらのコマンドはよく使用するのでぜひ使えるようにしてみてください。"
+Basic,Slackを使用したいろんなマークダウン記法,"Slackを使いこなすと、プログラミング学習の効率もぐんと上がる（特に質問の仕方が上手くなる）ので、ぜひマークダウン記法を利用してみてください！
+|No.|記入方法|用途|
+|---|---|---|
+|1|@hoge|hogeさん、あるいは hoge グループあてのコメントになる|
+|2|#hoge|   チャンネル　hoge へのリンクになる|
+|3| \`サンプルコード \`|ボーダーで囲まれ、文字色赤、背景灰色になる|
+|4| \`\`\` サンプルコード \`\`\` |ボーダーで囲まれ、 \`\`\` で発言を開始すると再び \`\`\` が来るまでは改行しても送信しない|
+|5|>引用文|引用表現にする|
+|6|>>>引用文|改行含めた段落全体を引用表現にする|
+|7|\_slack_|文字をイタリックにする|
+|8|\*slack*|文字をボールドにする|
+|9|\~slack~|文字をストライク（取り消し線）にする|
+No.3, 4 の記法を使用した時の表示は以下のようになります。
+`No.3の書き方：1行のコードを書く場合`
+```
+No.4の書き方
+複数行のコードを書く場合
+```
+# まとめ
+Slackにおいてマークダウンを使用するとコミュニケーション効率が圧倒的に上がるので、ぜひ活用して見てください。"
+Git,Gitの基本,"Gitとは、プログラムのソースコードなどの変更履歴を記録・追跡するためのバージョン管理システムのことです。バージョン管理とは、その名の通り、複数存在するソースコードのバージョンを管理することを指します。
+このGitを使用することによって、変更履歴をさかのぼってソースコードを元の状態に戻す事ができ、複数人での共同開発も可能になります。
+![Gitでできること](/git_basic/git_basic.jpg)
+チームでの共同開発をする上で、もはやGitは欠かせない存在となっています。
+プログラマーというとコードを書いているイメージがあるかと思いますが、それ以前にGitなどのバージョン管理ツールが無ければ仕事になりません。ぜひ、ここで基礎を押さえておきましょう。
+## Gitにおける開発の流れ
+まずは基本的な用語から押さえておきましょう。
+Gitがバージョン管理下におく場所を「リポジトリ」と言います。リポジトリには「ローカルリポジトリ」と「リモートリポジトリ」があります。
+ローカルリポジトリは自分のパソコン内にあるリポジトリ、リモートリポジトリはネット上にあるリポジトリと覚えておきましょう。
+リモートリポジトリに関しては、後ほど詳しくご説明いたします。
+ユーザが変更の履歴を保存することをコミット（commit）と言います。
+これはGitの持つ機能の中でも特によく使用するので、ぜひ覚えておいてください。
+コミットは実行した順番で記録されるので、時系列に沿って変更履歴を追う事ができます。
+そのため、過去にどういう変更を行ったのかを簡単に確認する事ができるのです。
+また、コミットをする際にはコミットメッセージという形でメモを残す事ができます。
+例えば、「デザインの変更をしました」とか「データベースへの登録処理を追加しました」といったメモを残す事ができるというわけです。それによって、より変更履歴の理解が容易になります。
+複数人での開発を行う際は、この「コミット」と「コミットメッセージ」を利用し、誰がみても理解できるような変更履歴を作成し、任意の履歴に遡ることができるよう心がけましょう。
+## gitの構成
+詳細な説明に入る前に、まずはGitがファイルの状態を保存する場所についてご説明します。
+実は、Gitにはファイルを保存するための場所がいくつかあります。その構成は以下の通りです。
+1. ワーキングツリー（今作業しているファイルのある場所）
+2. インデックス（コミットするためのファイルを登録する場所）
+3. ローカルリポジトリ（リモートリポジトリに変更内容を送信するための場所）
+4. リモートリポジトリ（複数人でファイルを共有するための場所）
+## 同時並行で複数の開発を可能にする機能
+Gitには、複数の開発を同時並行することができる機能があります。
+例えば、Aさんはデータの登録を行う処理を実装し、Bさんはデータの表示形式を綺麗にするという実装をするとします。
+そのとき、2人で同じファイルを編集すると、とても効率が悪くなります。
+その問題を解決するための機能が「ブランチ」です。ブランチとは、文字通り開発を枝分かれさせる機能のことで、これを使用することによってAさんとBさんの開発を別々のものとして扱うことができます。
+例）
+Aさん　→ ブランチA
+Bさん　→ ブランチB
+## ローカルリポジトリとリモートリポジトリ
+前述でGitのバージョン管理下にある場所をリポジトリというというお話をしました。
+その中でも、ネットを介してどこからでも利用できるようにしたリポジトリのことをリモートリポジトリと言います。
+それとは逆に、自分のパソコン内にあるリポジトリのことろローカルリポジトリと言います。
+複数人での開発を行うときは、リモートリポジトリを複数のプログラマーで共有し、そのリモートリポジトリのクローンをそれぞれのプログラマーがローカルリポジトリにコピーして開発を行うというスタイルになります。
+これによって、１つのプロジェクトを複数人で開発することが可能になるわけです。
+## バージョン管理の流れ
+Gitでのバージョン管理は基本的に以下のような流れになります。
+- ローカルリポジトリの作成（git init）
+- 変更ファイルをインデックスにあげる（git add）
+- 変更履歴を保存する（git commit）
+## 今回使用するサンプル
+今回は、Hello World!!と表示する単純なHTMLファイルを利用して、Gitの使い方を学んでいきましょう。
+`git_sample`というディレクトリを作成し、テキストエディタで`git_sample.html`というファイルを作成しましょう。
+まずは、サンプルファイルを置くための`git_sample`ディレクトリをターミナルから作成しましょう。
+```
+mkdir git_sample
+```
+ディレクトリが作成できたら、cdコマンドで`git_sample`ディレクトリに移動しましょう。
+```
+cd git_sample
+```
+ディレクトリに移動できたら、`git_sample.html`を作成します。
+ファイルに関しては、テキストエディタから作成してもいいのですが、ターミナルから作成することも可能です。
+その際は、`touch`コマンドを使用します。`git_sample.html`という名前のファイルを作成する場合は、以下のコマンドを実行しましょう。
+```
+touch git_sample.html
+```
+これで、Gitの練習をする準備が整いました。それではさっそく、Gitコマンドについて学んでいきましょう。
+## Gitをインストールする
+Gitをパソコンで使用できるようにするためには、まずはインストールを行わなければいけません。
+そのGitをインストールするためには、Homebrewというパッケージ管理ツールを使用すると楽なので、まずはHomebrewからインストールしましょう。
+以下のコマンドをターミナルにコピー&ペーストして実行してください。それだけで、Homebrewがインストールできます。
+```
+/usr/bin/ruby -e ""$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)""
+```
+Homebrewのインストールが終わったら、以下のコマンドをターミナルに入力し、Homebrewを使用してGitをインストールします。
+```
+brew install git
+```
+インストールが完了したら、いよいよGitを利用したバージョン管理の方法について学んでいきます。なんども基礎を繰り返し、バージョン管理のスキルをしっかりと身につけていきましょう！
+## ローカルリポジトリを作る
+cdコマンドを利用してローカルリポジトリを作成したいディレクトリに移動できたら、`git init`というコマンドを実行します。
+このコマンドで、ディレクトリ内に中身が空のローカルリポジトリを作成します。また、すでにリポジトリが存在している場合には、再度`git init`を実行する必要はありません。
+```
+git init
+```
+`ls`コマンドを入力し、gitのリポジトリができていることを確認しましょう。
+以下のように.Gitというディレクトリが作成されて入れば成功です。
+```
+ls -la
+```
+## サンプルを編集する
+それでは、先ほど作成した`git_sample.html`の内容を変更しましょう。以下のコードを追加してください。
+```
+<h1>Hello World!!</h1>
+```
+以上のように変更できたら、次はその変更履歴を`Git`を使用して保存します。
+## ファイルをインデックスに登録する
+`git init`実行後、現在作成したファイルの変更履歴を保存するために`git add .`を実行します。
+このコマンドは、現在開発しているプロジェクトの中で変更があったファイルを見つけてインデックスに上げ、変更履歴を保存するための準備をしてくれます。
+要するに、「変更した全てのファイル」を「Gitによってバージョン管理するための対象」に入れるということです。それでは、`git add .`を実行しましょう。
+```
+git add .
+```
+ちなみに、`git add .`は変更したファイルをまとめてインデックスにあげるためのコマンドになります。
+そのほかにも、特定のファイルのみをインデックスに上げるコマンドもあります。
+その場合は、`git add ファイル名`コマンドを実行します。
+例） sample.rbというファイルのみをインデックスに上げる場合のコマンド
+```
+git add sample.rb
+```
+## 変更履歴を保存する
+変更履歴を保存するには、`commit`というコマンドを実行します。
+このコマンドを実行すると、ローカルリポジトリの変更内容を保存します。
+また、`commit`を実行する際には`git add`において変更済みのファイルがインデックスにあることが必須となります。
+もし変更済みのファイルがインデックスにない場合は、`commit`するものが無いというメッセージが表示されます。
+```
+nothing to commit, working tree clean
+```
+`commit`を実行する際は、以下のコマンドを入力します。`-m`や`--message`オプションをつけることによって、コミットに対するコメントを残すことができます。
+これにより、各コミットにおいてどのような変更が行われたのかを把握しやすくすることができます。
+```
+git commit -m ""init commit""
+```
+## コミットまでの流れのおさらい
+それでは、ファイルを変更してからコミットするまでの流れを改めておさらいしましょう。
+先ほど作成した`git_sample.html`の内容を以下のように変更しましょう。
+```
+<h1>Good morning!!</h1>
+```
+変更したファイルをインデックスに登録します。
+```
+git add .
+```
+インデックスに登録したファイルをコミットします。
+```
+git commit -m ""change message""
+```
+これで、ファイルを変更してからコミットまでの一連の流れが終了です。
+ `git add` を実行してから `git commit` という流れをなんども繰り返して体に覚えさせるようにしましょう。
+## 変更履歴のメッセージを修正する
+コミットメッセージを修正したい時には、以下のコマンドを実行します。
+```
+git rebase -i HEAD^
+```
+それでは、過去のコミットメッセージを変更してみましょう。
+まずは、過去のコミットメッセージを確認してください。
+```
+git log
+```
+そうすると、過去のコミット一覧が表示され、それに対応するコミットメッセージも確認できます。
+```
+change message
+```
+今回は、`change message`というメッセージを`change hello to good morning`に変更しましょう。
+それではさっそく、以下のコマンドを実行してください。
+```
+git rebase -i HEAD^
+```
+そうすると、以下のような画面が表示されます。
+```
+pick 65e1b59 change message
+# Rebase d9a2c59..65e1b59 onto d9a2c59 (1 command)
+#
+# Commands:
+# p, pick = use commit
+# r, reword = use commit, but edit the commit message
+# e, edit = use commit, but stop for amending
+# s, squash = use commit, but meld into previous commit
+# f, fixup = like ""squash"", but discard this commit's log message
+# x, exec = run command (the rest of the line) using shell
+# d, drop = remove commit
+#
+# These lines can be re-ordered; they are executed from top to bottom.
+#
+# If you remove a line here THAT COMMIT WILL BE LOST.
+#
+# However, if you remove everything, the rebase will be aborted.
+#
+# Note that empty commits are commented out
+~
+~
+~
+""~/git_sample/.git/rebase-merge/git-rebase-todo"" 20L, 680C
+```
+その表示の中で、一番上に書かれている`pick`の部分を`r`に変更するとコミットメッセージを編集することができます。
+その際、`i`を押して表示を`INSERT`モードに切り替えてください。そうすると、以下のように画面の一覧下に`INSERT`という文字が表示されます
+```
+pick 65e1b59 change message
+# Rebase d9a2c59..65e1b59 onto d9a2c59 (1 command)
+#
+# Commands:
+# p, pick = use commit
+# r, reword = use commit, but edit the commit message
+# e, edit = use commit, but stop for amending
+# s, squash = use commit, but meld into previous commit
+# f, fixup = like ""squash"", but discard this commit's log message
+# x, exec = run command (the rest of the line) using shell
+# d, drop = remove commit
+#
+# These lines can be re-ordered; they are executed from top to bottom.
+#
+# If you remove a line here THAT COMMIT WILL BE LOST.
+#
+# However, if you remove everything, the rebase will be aborted.
+#
+# Note that empty commits are commented out
+~
+~
+~
+-- INSERT --
+```
+`INSERT`が表示されたら、`pick`の部分を`r`に書き換えましょう。
+```
+r 65e1b59 change message
+# Rebase d9a2c59..65e1b59 onto d9a2c59 (1 command)
+#
+# Commands:
+# p, pick = use commit
+# r, reword = use commit, but edit the commit message
+# e, edit = use commit, but stop for amending
+# s, squash = use commit, but meld into previous commit
+# f, fixup = like ""squash"", but discard this commit's log message
+# x, exec = run command (the rest of the line) using shell
+# d, drop = remove commit
+#
+# These lines can be re-ordered; they are executed from top to bottom.
+#
+# If you remove a line here THAT COMMIT WILL BE LOST.
+#
+# However, if you remove everything, the rebase will be aborted.
+#
+# Note that empty commits are commented out
+~
+~
+~
+""~/git_sample/.git/rebase-merge/git-rebase-todo"" 20L, 680C
+```
+書き換えられたら、キーボードの左上にある`esc`を押し、`:wq`で上書き保存します。そうすると、次にコミットメッセージが表示されます。
+```
+chnage message
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+# Date:      Mon Sep 10 12:58:07 2018 +0900
+#
+# interactive rebase in progress; onto d9a2c59
+# Last command done (1 command done):
+#    r 65e1b59 change hello to good morning
+# No commands remaining.
+# You are currently editing a commit while rebasing branch 'master' on 'd9a2c59'.
+#
+# Changes to be committed:
+#       renamed:    .git_sample.rb.swp -> .git_sample.rb.swo
+#       modified:   git_sample.rb
+#
+~
+~
+~
+~
+~
+~
+""~/git_sample/.git/COMMIT_EDITMSG"" 17L, 563C
+```
+コミットメッセージが確認できたら、`i`をクリックして`INSERT`モードに切り替え、コミットメッセージを変更します。
+```
+change hello to good morning
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+# Date:      Mon Sep 10 12:58:07 2018 +0900
+#
+# interactive rebase in progress; onto d9a2c59
+# Last command done (1 command done):
+#    r 65e1b59 change hello to good morning
+# No commands remaining.
+# You are currently editing a commit while rebasing branch 'master' on 'd9a2c59'.
+#
+# Changes to be committed:
+#       renamed:    .git_sample.rb.swp -> .git_sample.rb.swo
+#       modified:   git_sample.rb
+#
+~
+~
+~
+~
+~
+~
+""~/git_sample/.git/COMMIT_EDITMSG"" 17L, 563C
+```
+メッセージが変更できたら、`esc`を押し、`:wq`で変更内容を保存しましょう。そのあと、以下のコマンドを入力してコミットメッセージが変更されていることを確認してください。
+以上で、コミットメッセージの変更は終了です。
+## ブランチを作成する
+ブランチとは、複数の開発を同時並行して行うために必要な仕組みです。
+変更履歴の管理を分岐させることによって、各プログラマーで別々の機能を実装する事ができます。「ブランチ」という名前の通り、開発を枝分かれさせるという事ですね。そのブランチを作成するには、以下のコマンドを実行します。
+ブランチは、他のブランチに合体（マージ）させる事で、一つにまとめる事ができます。
+`master`と呼ばれるブランチが存在し、開発用に分岐させた他のブランチは、最終的にこの`master`にマージさせるというのが、一般的な開発の流れです。
+```
+git branch ブランチ名
+```
+`git branch`の後ろに任意のブランチ名をつける事によって、その名前で新しいブランチを作り出す事ができます。
+例えば、`sample`という名前のブランチを作成したいときは、以下のようにコマンドを入力します。
+```
+git branch sample
+```
+現在存在するブランチを確認したい場合は、`git branch`を実行するだけで大丈夫です。
+```
+git branch
+```
+新しくブランチを作成し切り替えるコマンドは以下の通りです。
+```
+git checkout -b sample
+```
+## ブランチを切り替える
+ブランチが作成できたら、つぎにその切り替え方を学んでいきましょう。現在、`git branch`を実行すると以下のような表示がされるかと思います。
+```
+* sample
+  master
+```
+その状態で、`git_sample.html`の内容を以下のように編集してみましょう。
+```
+<h1>こんにちは！！</h1>
+```
+上記のようにコードを変更できたら、次はその変更履歴を保存します。
+これまでの一連の流れを、ここで改めて確認しましょう。
+変更したファイルをインデックスにあげる
+```
+git add .
+```
+変更履歴を保存する
+```
+git commit -m ""changed english to japanese""
+```
+変更履歴が保存できたら、
+## ブランチをマージする（ローカルで完結）
+開発が完了したブランチを他のブランチに合体することをマージと言います。
+今回は、`sample`ブランチから`master`ブランチへマージする例を見て見ましょう。
+まず、今存在しているブランチを確かめます。
+```
+git branch
+```
+出力結果
+```
+* sample
+  master
+```
+`sample`ブランチから、`master`ブランチへと切り替えます。その際、使用するコマンドは`checkout`です。
+```
+git checkout maste...

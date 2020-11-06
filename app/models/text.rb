@@ -1,3 +1,3 @@
 class Text < ApplicationRecord
-  validates :title, :content, presence: true
+  validates :title, :genre, :content, presence: true
 end

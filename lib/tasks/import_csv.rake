@@ -11,4 +11,11 @@ namespace :import_csv do
         list = Import.csv_data(path: 'db/csv_data/movie_data.csv')
         Movie.create!(list)
     end
+
+    desc "TEXTデータをインポートするタスク"
+    task text_data: :environment do
+        list = Import.csv_data(path: 'db/csv_data/text_data.csv')
+        Text.create!(list)
+    end
+    
 end
