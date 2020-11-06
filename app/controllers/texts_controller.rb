@@ -1,6 +1,6 @@
 class TextsController < ApplicationController
   def index
-    @texs = Text.all
+    @texts = Text.all
   end
 
   def show
