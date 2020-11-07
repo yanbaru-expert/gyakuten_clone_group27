@@ -18,14 +18,14 @@
     <div class="col-12 col-md-6 col-lg-4 text-card-container" id="text">
       <a href="/texts/<%= text.id %>/" class="card">
       <div class="card-header p-0">
-        <img loading="lazy" alt="Macのショートカットキー" class="img-fluid" src="IMG_1954.JPG">
+        <img loading="lazy"  class="img-fluid" src=" <%= text.image%>">
       </div>
-        <div class="card-body">
-         <%= text.title %>
-          <p class="card-text">
-            <%= text.genre %>
-          </p>
-        </div>
+      <div class="card-body">
+        <%= text.title %>
+        <p class="card-text">
+          <%= text.genre %>
+        </p>
+      </div>
       </a>
     </div>
     <% end %>

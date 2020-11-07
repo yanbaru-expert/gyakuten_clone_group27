@@ -1,2 +1,4 @@
-<h1>Texts#show</h1>
-<p>Find me in app/views/texts/show.html.erb</p>
+<div class="aws-content">
+  <h2><%= markdown(@text.title).html_safe %></h2>
+  <p><%= markdown(@text.content).html_safe %></p>
+</div>
