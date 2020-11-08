@@ -12,7 +12,9 @@
     <div class="col-12 col-md-6 col-lg-4 text-card-container" id="text">
       <a href="/texts/<%= text.id %>/" class="card">
       <div class="card-header p-0">
-        <img loading="lazy"  class="img-fluid" src=" <%= text.image%>">
+        <% if text.image? %>
+        <%= image_tag text.image.url %>
+        <% end %>
       </div>
       <div class="card-title">
         <%= text.title %>

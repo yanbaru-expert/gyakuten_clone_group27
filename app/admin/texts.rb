@@ -11,15 +11,15 @@ ActiveAdmin.register Text do
     f.actions
   end
   
-  # show do |item_image|
-  #   attributes_table do
-  #     row :genre
-  #     row :title
-  #     row :content
-  #     # show画面で画像を表示するためのタグを追加
-  #     row :image do
-  #       image_tag(item_image.image)
-  #     end
-  #   end
-  # end    
+  show do |item_image|
+    attributes_table do
+      row :genre
+      row :title
+      row :content
+      # show画面で画像を表示するためのタグを追加
+      row :image do
+        image_tag(text.image.url)
+      end
+    end
+  end    
 end
