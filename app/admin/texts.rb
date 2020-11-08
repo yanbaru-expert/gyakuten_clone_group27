@@ -6,7 +6,7 @@ ActiveAdmin.register Text do
       f.input :genre
       f.input :title
       f.input :content
-      f.input :image, :as => :file
+      f.input :image
     end
     f.actions
   end
