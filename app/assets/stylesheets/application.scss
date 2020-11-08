@@ -6,6 +6,11 @@
   padding: 30px 15px;
 }
 
+.text-content{
+  padding-top: 7%;
+  padding-bottom: 30px;
+}
+
 .alert-notice {
   @extend .alert-success;
 }

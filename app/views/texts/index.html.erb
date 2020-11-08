@@ -1,10 +1,4 @@
 <div class="container">
-  <section id="take_of_rails">
-    <div class="cover text-center">
-      <p>サロン特別割引適用パスワード：gyakutenseyo</p>
-    </div>
-  </section>
-
   <h2 class="text-center">テキスト教材</h2>
   <div class="form-control-range">
     <form class="mb-3 search-form mx-auto">
@@ -20,14 +14,20 @@
       <div class="card-header p-0">
         <img loading="lazy"  class="img-fluid" src=" <%= text.image%>">
       </div>
-      <div class="card-body">
+      <div class="card-title">
         <%= text.title %>
         <p class="card-text">
-          <%= text.genre %>
+          【<%= text.genre %>】
         </p>
       </div>
       </a>
     </div>
     <% end %>
   </div>
+  <section class="advertising_banner">
+    <div class="cover text-center">
+      <a target="_blank" rel="noopener" href="https://freelance.cat-algorithm.com/apply_for_gyakuten_members/"></a>
+      <p>サロン特別割引適用パスワード：gyakutenseyo</p>
+    </div>
+  </section>
 </div>
