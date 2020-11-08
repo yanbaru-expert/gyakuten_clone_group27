@@ -1,0 +1,27 @@
+<div class="container">
+  <h2 class="text-center">テキスト教材</h2>
+  <div class="form-control-range">
+    <form class="mb-3 search-form mx-auto">
+      <i class="fa fa-search search-icon" title="Search"></i>
+      <input type="text" id="search-text" class="form-control search-text"
+        placeholder="教材を探す" aria-label="Username" aria-describedby="search-form">
+    </form>
+  </div>
+  <div class="row">
+    <% @texts.each do |text, i| %>
+    <div class="col-12 col-md-6 col-lg-4 text-card-container">
+      <a href="/texts/<%= text.id %>/" class="card">
+      <div class="card-header p-0">
+        <img loading="lazy"  class="img-fluid" src=" <%= text.image%>">
+      </div>
+      <div class="card-title">
+        <%= text.title %>
+        <p class="card-text">
+          【<%= text.genre %>】
+        </p>
+      </div>
+      </a>
+    </div>
+    <% end %>
+  </div>
+</div>
