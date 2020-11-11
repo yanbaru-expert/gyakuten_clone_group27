@@ -15,6 +15,8 @@ gem 'kaminari'
 # 画像投稿機能
 gem 'carrierwave', '~> 2.0'
 
+# 検索機能
+gem 'ransack'
 
 #管理者画面
 gem 'activeadmin'
