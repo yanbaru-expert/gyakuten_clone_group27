@@ -2,13 +2,24 @@
 @import "bootstrap/scss/bootstrap";
 .base-container {
   @extend .container-fluid;
-  max-width: var(--breakpoint-lg);
-  padding: 30px 15px;
-}
-
-.text-content{
+  // max-width: var(--breakpoint-lg);
+  // padding: 30px 15px;
   padding-top: 7%;
   padding-bottom: 30px;
+}
+
+
+
+.text-card-container {
+  padding: 9px;
+  padding-right: 9px;
+  margin-bottom: 50px;
+}
+
+.content-card {
+  height: 370px;
+  max-width: 376px;
+  margin: 0 auto;
 }
 
 .alert-notice {

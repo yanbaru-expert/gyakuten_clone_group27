@@ -1,4 +1,4 @@
-<div class="container">
+<div class="texts-wrapper">
   <h2 class="text-center">テキスト教材</h2>
   <div class="form-control-range">
     <form class="mb-3 search-form mx-auto">
@@ -10,17 +10,28 @@
   <div class="row">
     <% @texts.each do |text, i| %>
     <div class="col-12 col-md-6 col-lg-4 text-card-container">
-      <a href="/texts/<%= text.id %>/" class="card">
-      <div class="card-header p-0">
-        <img loading="lazy"  class="img-fluid" src=" <%= text.image%>">
+      <div class="card content-card border-dark mb-3">
+        <a href="/texts/<%= text.id %>/" class="card">
+        <div class="card-header p-0">
+          <% if text.image? %>
+          <%= image_tag text.image.url %>
+          <% end %>
+        </div>
+        <div class="card-body text-dark text-card-body">
+          <div id="read-text-186">
+            <object>
+              <a class="btn btn-secondary btn-block"></a>
+            </object>
+          </div>
+          <p class="card-text text-title">
+            <%= text.title %>
+          </p>
+          <p>
+            【<%= text.genre %>】
+          </p>
+        </div>
+        </a>
       </div>
-      <div class="card-title">
-        <%= text.title %>
-        <p class="card-text">
-          【<%= text.genre %>】
-        </p>
-      </div>
-      </a>
     </div>
     <% end %>
   </div>
