@@ -2,10 +2,8 @@ class TextsController < ApplicationController
   def index
     if params[:genre].nil? 
       @texts = Text.where(genre: ["Ruby on Rails", "Git","Basic","Ruby"])
-    elsif params[:genre] == "Php"
-      @texts = Text.where(genre: "Php")
-    else 
-      @texts = Text.where(genre: "AWS")
+    else
+      @texts = Text.where(genre: params[:genre])
     end
   end
 
