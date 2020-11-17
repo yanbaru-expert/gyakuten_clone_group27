@@ -1,12 +1,18 @@
 <div class="texts-wrapper">
   <h2 class="text-center">テキスト教材</h2>
-  <div class="form-control-range">
+  <%# 検索窓 %>
+  <div class="search-area">
     <form class="mb-3 search-form mx-auto">
       <i class="fa fa-search search-icon" title="Search"></i>
       <input type="text" id="search-text" class="form-control search-text"
         placeholder="教材を探す" aria-label="Username" aria-describedby="search-form">
     </form>
+    <div class="search-result">
+        <div class="search-result__hit-num"></div>
+        <div id="search-result__list"></div>
+      </div>
   </div>
+  <%# ここまで %>
   <div class="row">
     <% @texts.each do |text, i| %>
     <div class="col-12 col-md-6 col-lg-4 text-card-container">
@@ -17,22 +23,70 @@
           <%= image_tag text.image.url %>
           <% end %>
         </div>
+        <%# 検索ターゲット %>
         <div class="card-body text-dark text-card-body">
           <div id="read-text-186">
             <object>
               <a class="btn btn-secondary btn-block"></a>
             </object>
           </div>
-          <p class="card-text text-title">
+          <p class="card-text text-title target-area">
             <%= text.title %>
           </p>
           <p>
             【<%= text.genre %>】
           </p>
         </div>
+        <%# ここまで %>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
         </a>
       </div>
     </div>
     <% end %>
   </div>
 </div>
+
+
+<script>
+searchWord = function(){
+  var searchResult,
+      searchText = $(this).val(), // 検索ボックスに入力された値
+      targetText,
+      hitNum;
+ 
+  // 検索結果を格納するための配列を用意
+  searchResult = [];
+ 
+  // 検索結果エリアの表示を空にする
+  $('#search-result__list').empty();
+  $('.search-result__hit-num').empty();
+ 
+  // 検索ボックスに値が入ってる場合
+  if (searchText != '') {
+    $('.target-area').each(function() {
+      targetText = $(this).text();
+ 
+      // 検索対象となるリストに入力された文字列が存在するかどうかを判断
+      if (targetText.indexOf(searchText) != -1) {
+        // 存在する場合はそのリストのテキストを用意した配列に格納
+        searchResult.push(targetText);
+      }
+    });
+ 
+    // 検索結果をページに出力
+    for (var i = 0; i < searchResult.length; i ++) {
+      $('<span>').text(searchResult[i]).appendTo('#search-result__list');
+    }
+ 
+    // ヒットの件数をページに出力
+   
+    hitNum = $('@texts');
+    $('.search-result__hit-num').append(hitNum);
+  }
+};
+ 
+// searchWordの実行
+$('#search-text').on('input', searchWord);
+
+</script>
