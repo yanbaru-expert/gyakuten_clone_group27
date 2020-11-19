@@ -1,0 +1,23 @@
+<div class="p-5 mx-5">
+  <h1 class="text-center" style="color: #28a745">LINE@</h1>
+  <div class="table table-striped">
+    <table class="table table-striped">
+      <thead class="bg-success text-white" style="background-color: #28a745;">
+        <tr>
+          <th class="w-1 align-middle">No.</th>
+          <th class="w-2 align-middle">ジャンル</th>
+          <th class="w-5 align-middle" class="w-100">内容</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @lines.each.with_index(1) do |line, i| %>
+          <tr>
+            <th scope="row" class="align-middle pl-3"><%= i %></th>
+            <td class="align-middle pl-3"><%= line.genre %>
+            <td class="break-word"><%= link_to line.title, line %>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
