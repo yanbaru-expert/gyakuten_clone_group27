@@ -12,10 +12,10 @@
           Rails
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <p class="dropdown-item"><%= link_to " Ruby/Rails教材", texts_path %></p>
-            <p class="dropdown-item"><%= link_to "動画教材", movies_path %></p>
-            <p class="dropdown-item"><%= link_to "AWS教材", texts_path(genre: "AWS") %></p>
-            <p class="dropdown-item"><%= link_to "プログラミング勉強会", movies_path(genre: "Live") %></p>
+            <%= link_to " Ruby/Rails教材", texts_path, class: "dropdown-item" %>
+            <%= link_to "動画教材", movies_path, class: "dropdown-item" %>
+            <%= link_to "AWS教材", texts_path(genre: "AWS"), class: "dropdown-item" %>
+            <%= link_to "プログラミング勉強会", movies_path(genre: "Live"), class: "dropdown-item" %>
           </div>
         </li>
         <li class="nav-item active">
@@ -35,8 +35,8 @@
           PHP
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <p class="dropdown-item"><%= link_to "PHPテキスト教材", texts_path(genre: "Php") %></p>
-            <p class="dropdown-item"><%= link_to "PHP動画教材", movies_path(genre: "Php") %></p>
+            <%= link_to "PHPテキスト教材", texts_path(genre: "Php"), class: "dropdown-item" %>
+            <%= link_to "PHP動画教材", movies_path(genre: "Php"), class: "dropdown-item" %>
           </div>
         </li>
         <li class="nav-item active">
