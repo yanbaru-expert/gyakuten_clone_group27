@@ -18,7 +18,7 @@
   <div class="container">
     <% @questions.each do |question, i| %>
     <div class="question-container">
-      <a href="#" rel="hover" class="button hover">
+      <a href="/questions/<%= question.id %>/" rel="hover" class="button hover">
         <div class="question">
           <div class="row">
             <div class="col-md-7">
