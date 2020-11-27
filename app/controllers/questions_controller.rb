@@ -11,6 +11,11 @@ class QuestionsController < ApplicationController
   end
 
   def create
-    question.create(question_params)
+    Question.create(question_params)
+  end
+
+  private
+  def question_params
+    params.permit(:title, :detail)
   end
 end
