@@ -8,6 +8,9 @@
   padding-bottom: 30px;
 }
 
+.mw-md {
+  max-width: var(--breakpoint-md);
+}
 
 
 .text-card-container {
@@ -40,4 +43,33 @@ body{
 
 ul.pagination {
   justify-content: center;
+}
+
+#questions a {
+  text-decoration: none;
+  display: block;
+  border:solid 2px #505050;
+  border-radius: 10px;
+  color: #333333;
+  transition: .4s;
+}
+
+#questions a .title-container{
+  font-size: 22px;
+  line-height: 2;
+}
+
+#questions .question {
+  padding: 10px;
+}
+
+#questions .question-container {
+  padding: 30px 0 ;
+}
+
+.hover {
+  &:hover {
+    transform: translateY(-6px);
+    animation-name: hover;
+  }
 }
