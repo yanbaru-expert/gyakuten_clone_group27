@@ -8,6 +8,14 @@
   padding-bottom: 30px;
 }
 
+.mw-md {
+  max-width: var(--breakpoint-md);
+}
+
+.mw-xl {
+  max-width: var(--breakpoint-xl);
+}
+
 
 .text-card-container {
   padding: 9px;
