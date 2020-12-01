@@ -9,8 +9,13 @@ class QuestionsController < ApplicationController
   end
 
   def create
-    Question.create(question_params)
+    @question = Question.create(question_params)
+    if @question.save
     redirect_to action: :index
+    else
+      @questions = Question.order(id: :desc)
+      render :index
+    end
   end
 
   private
