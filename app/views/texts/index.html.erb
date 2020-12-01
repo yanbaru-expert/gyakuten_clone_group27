@@ -12,24 +12,29 @@
     <div class="col-12 col-md-6 col-lg-4 text-card-container">
       <div class="card content-card border-dark mb-3">
         <a href="/texts/<%= text.id %>/" class="card">
-        <div class="card-header p-0">
-          <% if text.image? %>
-          <%= image_tag text.image.url %>
-          <% end %>
-        </div>
-        <div class="card-body text-dark text-card-body">
-          <div id="read-text-186">
-            <object>
-              <a class="btn btn-secondary btn-block"></a>
-            </object>
+          <div class="card-header p-0">
+            <% if text.image? %>
+            <%= image_tag text.image.url %>
+            <% end %>
           </div>
-          <p class="card-text text-title">
-            <%= text.title %>
-          </p>
-          <p>
-            【<%= text.genre %>】
-          </p>
-        </div>
+          <div class="card-body text-dark text-card-body">
+            <div id="read-text-186">
+              <object>
+                <% if read_texts? %>
+                  <%= link_to "読破済みを解除する" "#", method: :delete %>
+                <% else %>
+                <%= link_to "読破済みにする" "#", method: :post %>
+                <% end %>
+                <%# <a class="btn btn-secondary btn-block" href="/">読破済みにする</a> %>
+              </object>
+            </div>
+            <p class="card-text text-title">
+              <%= text.title %>
+            </p>
+            <p>
+              【<%= text.genre %>】
+            </p>
+          </div>
         </a>
       </div>
     </div>
