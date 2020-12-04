@@ -8,8 +8,16 @@
   padding-bottom: 30px;
 }
 
+.mw-sm {
+  max-width: var(--breakpoint-sm);
+}
+
 .mw-md {
   max-width: var(--breakpoint-md);
+}
+
+.mw-xl {
+  max-width: var(--breakpoint-xl);
 }
 
 
