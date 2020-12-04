@@ -14,6 +14,7 @@ class QuestionsController < ApplicationController
     redirect_to action: :index
     else
       @questions = Question.order(id: :desc)
+      flash.now[:alert] =" #{@question.errors.messages.length}つのエラーがあります。"
       render :index
     end
   end
