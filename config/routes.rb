@@ -7,5 +7,6 @@ Rails.application.routes.draw do
   resources :texts
   resources :lines, only: [:index, :show]
   resources :aws_texts
+  resources :questions
   resources :movies, only: [:index, :show]
 end

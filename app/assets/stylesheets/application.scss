@@ -8,6 +8,22 @@
   padding-bottom: 30px;
 }
 
+.mw-sm {
+  max-width: var(--breakpoint-sm);
+}
+
+.mw-md {
+  max-width: var(--breakpoint-md);
+}
+
+.mw-lg {
+  max-width: var(--breakpoint-lg);
+}
+
+
+.mw-xl {
+  max-width: var(--breakpoint-xl);
+}
 
 .text-card-container {
   padding: 9px;
@@ -39,4 +55,49 @@ body{
 
 ul.pagination {
   justify-content: center;
+}
+
+#questions a {
+  text-decoration: none;
+  display: block;
+  border:solid 2px #505050;
+  border-radius: 10px;
+  color: #333333;
+  transition: .4s;
+}
+
+#questions a .title-container{
+  font-size: 22px;
+  line-height: 2;
+}
+
+#questions .question {
+  padding: 10px;
+}
+
+#questions .question-container {
+  padding: 30px 0 ;
+}
+
+.hover {
+  &:hover {
+    transform: translateY(-6px);
+    animation-name: hover;
+  }
+}
+
+.hr {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border: 0;
+  border-top: 1px solid rgba(0,0,0,0.1);
+}
+
+div.field_with_errors {
+  display: contents;
+
+  .form-control {
+    border: 1px solid red;
+  }
+
 }

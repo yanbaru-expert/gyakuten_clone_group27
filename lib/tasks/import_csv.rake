@@ -24,4 +24,9 @@ namespace :import_csv do
         Line.create!(list)
     end
     
+    desc "QUESTIONをインポートするタスク"
+    task question: :environment do
+        list = Import.csv_data(path: "db/csv_data/question_data.csv")
+        Question.create!(list)
+    end
 end

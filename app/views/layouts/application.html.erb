@@ -12,17 +12,15 @@
   </head>
 
   <body>
-   <header>
-   <%= render 'shared/header'%>
-   
-   </header>
-   <main>
-
-     <%= render "layouts/flash" %>
-     <div class="base-container mw-md">
-     <%= yield %>
-     </div>
-   </main>
+    <header>
+      <%= render 'shared/header'%>
+    </header>
+    <main>
+      <%= render "layouts/flash" %>
+      <div class="base-container <%= max_width %>">
+      <%= yield %>
+      </div>
+    </main>
     <footer>
 
     </footer>
