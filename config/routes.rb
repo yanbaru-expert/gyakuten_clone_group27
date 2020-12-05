@@ -4,7 +4,9 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
   devise_for :users
   root to: "movies#index"
-  resources :texts
+  resources :texts do
+    resources :read_texts, only: [:create, :destroy]
+  end
   resources :lines, only: [:index, :show]
   resources :aws_texts
   resources :movies, only: [:index, :show]
