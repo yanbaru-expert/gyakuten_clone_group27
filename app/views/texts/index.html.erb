@@ -20,10 +20,11 @@
           <div class="card-body text-dark text-card-body">
             <div id="read-text-186">
               <object>
-                <% if read_texts? %>
-                  <%= link_to "読破済みを解除する" "#", method: :delete %>
+             
+                <% if current_user.already_read?(@text) %>
+                  <%= button_to "読破済みを解除する", text_read_text(@text), method: :delete %>
                 <% else %>
-                <%= link_to "読破済みにする" "#", method: :post %>
+                <%= button_to "読破済みにする", text_read_texts_path(@text), method: :post %>
                 <% end %>
                 <%# <a class="btn btn-secondary btn-block" href="/">読破済みにする</a> %>
               </object>

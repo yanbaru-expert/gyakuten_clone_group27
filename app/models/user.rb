@@ -3,9 +3,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-
+  has_many :texts
   has_many :read_texts
-  def already_read?(text)
-    self.read_texts.exists?(text_id: text.id)
-  end
+  
 end
