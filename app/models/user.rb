@@ -5,4 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :read_texts
+  def already_read?(text)
+    self.read_texts.exists?(text_id: text.id)
+  end
 end
