@@ -5,5 +5,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :texts, dependent: :destroy
   has_many :read_texts, dependent: :destroy
-  
+  has_many :watched_texts, through: :read_texts, source: :text
 end
