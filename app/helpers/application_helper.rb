@@ -45,4 +45,14 @@ module ApplicationHelper
       markdown = Redcarpet::Markdown.new(html_render, options)
       markdown.render(text)
   end
+
+  def max_width
+    if devise_controller?
+        "mw-sm"
+      elsif controller_name.in?(%w[ movies]) || (controller_name.in?(%w[texts challenges]) && action_name == "index")
+        "mw-xl"
+      else
+        "mw-md"
+      end
+  end
 end

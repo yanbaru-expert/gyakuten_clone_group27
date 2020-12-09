@@ -8,9 +8,11 @@
   padding-bottom: 30px;
 }
 
+
 .mw-md {
   max-width: var(--breakpoint-md);
 }
+
 
 .mw-xl {
   max-width: var(--breakpoint-xl);
@@ -49,6 +51,7 @@ ul.pagination {
   justify-content: center;
 }
 
+
 .btn-secondary{
   color: #fff;
   background-color: #6c757d;
@@ -60,3 +63,5 @@ ul.pagination {
   background-color: #007bff;
   border-color: #007bff;
 }
+
+

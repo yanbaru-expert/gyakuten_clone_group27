@@ -1,4 +1,5 @@
 class MoviesController < ApplicationController
+
   def index
     params[:genre]
     if params[:genre].nil? 

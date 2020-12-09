@@ -9,5 +9,6 @@ Rails.application.routes.draw do
   end
   resources :lines, only: [:index, :show]
   resources :aws_texts
+  resources :questions
   resources :movies, only: [:index, :show]
 end
