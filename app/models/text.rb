@@ -5,7 +5,7 @@ class Text < ApplicationRecord
   has_many :read_texts, dependent: :destroy
   has_many :watched_users, through: :read_texts, source: :user
 
-  def read_by?(user)
-    read_texts.find_by(user_id: user.id).present?
+  def read_by?(current_user)
+    read_texts.find_by(user_id: current_user.id).present?
   end
 end

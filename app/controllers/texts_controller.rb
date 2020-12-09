@@ -5,6 +5,8 @@ class TextsController < ApplicationController
     else
       @texts = Text.where(genre: params[:genre])
     end
+
+    @text = Text.new
   end
 
   def show

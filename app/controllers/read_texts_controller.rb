@@ -1,7 +1,7 @@
 class ReadTextsController < ApplicationController
 
   def create
-    @read_text = current_user.readtexts.create(text_id: params[:text_id])
+    current_user.read_texts.create!(text_id: params[:text_id])
     redirect_back(fallback_location: root_path)
   end
 

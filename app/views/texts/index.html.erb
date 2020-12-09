@@ -1,3 +1,9 @@
+<% if @text.read_by?(current_user) %>
+                  <%= button_to "読破済みを解除する", text_read_texts_path(@text), method: :delete %>
+                <% else %>
+                <%= button_to "読破済みにする", text_read_texts_path(current_user), method: :post %>
+                <% end %>
+
 <div class="texts-wrapper">
   <h2 class="text-center">テキスト教材</h2>
   <div class="form-control-range">
@@ -21,11 +27,7 @@
             <div id="read-text-186">
               <object>
          
-                <% if @texts.read_by?(user) %>
-                  <%= button_to "読破済みを解除する", text_read_text(@text), method: :delete %>
-                <% else %>
-                <%= button_to "読破済みにする", text_read_texts_path(@text), method: :post %>
-                <% end %>
+                
                 <%# <a class="btn btn-secondary btn-block" href="/">読破済みにする</a> %>
               </object>
             </div>
