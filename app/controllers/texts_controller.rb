@@ -6,12 +6,9 @@ class TextsController < ApplicationController
     else
       @texts = Text.where(genre: params[:genre])
     end
-    # @text = Text.new
-    # @text = Text.find_by(params[:id])
   end
 
   def show
-    # binding.pry
     @text = Text.find(params[:id])
   end
 end

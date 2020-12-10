@@ -1,7 +1,6 @@
 class ReadTextsController < ApplicationController
 
   def create
-    # binding.pry
     current_user.read_texts.create!(text_id: params[:text_id])
     redirect_back(fallback_location: root_path)
   end

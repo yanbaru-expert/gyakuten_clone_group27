@@ -3,7 +3,7 @@ class Text < ApplicationRecord
   mount_uploader :image, ImageUploader
   belongs_to :user
   has_many :read_texts, dependent: :destroy
-  has_many :watched_users, through: :read_texts, source: :user
+  has_many :read_users, through: :read_texts, source: :user
 
   def read_by?(current_user)
     read_texts.find_by(user_id: current_user.id).present?
