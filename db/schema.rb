@@ -10,8 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_09_094912) do
-
+ActiveRecord::Schema.define(version: 2020_11_21_110003) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -80,7 +79,7 @@ ActiveRecord::Schema.define(version: 2020_12_09_094912) do
     t.index ["user_id", "text_id"], name: "index_read_texts_on_user_id_and_text_id", unique: true
     t.index ["user_id"], name: "index_read_texts_on_user_id"
   end
-
+  
   create_table "texts", force: :cascade do |t|
     t.string "title"
     t.string "genre"
