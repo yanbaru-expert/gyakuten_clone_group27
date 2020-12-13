@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_09_094912) do
+ActiveRecord::Schema.define(version: 2020_12_05_123100) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -64,13 +64,6 @@ ActiveRecord::Schema.define(version: 2020_12_09_094912) do
     t.string "genre"
   end
 
-  create_table "questions", force: :cascade do |t|
-    t.string "title"
-    t.text "detail"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "read_texts", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "text_id", null: false
@@ -88,8 +81,6 @@ ActiveRecord::Schema.define(version: 2020_12_09_094912) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "image"
-    t.bigint "user_id"
-    t.index ["user_id"], name: "index_texts_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -106,5 +97,4 @@ ActiveRecord::Schema.define(version: 2020_12_09_094912) do
 
   add_foreign_key "read_texts", "texts"
   add_foreign_key "read_texts", "users"
-  add_foreign_key "texts", "users"
 end
