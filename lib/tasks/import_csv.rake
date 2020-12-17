@@ -13,29 +13,17 @@ namespace :import_csv do
     end
 
     desc "TEXTデータをインポートするタスク"
-    # binding.pry
     task text: :environment do
-        list = Import.csv_data(path: "db/csv_data/text_data.csv")
+        list = []
         path = File.join Rails.root, "db/csv_data/text_data.csv"
         CSV.foreach(path, headers: true) do |row|
-        #     list << {
-        #         image: File.open("#{Rails.root}/#{row['image']}",image.read),
-                
-        #         genre: row["genre"],
-        #         title: row["title"],
-        #         content: row["content"]
-        #     }
-        #   end
-        list << {
-            image: File.open("#{Rails.root}/db/fixtures/#{row['image']}"),
-            genre: row["genre"],
+            list << {
+                image: File.open("#{Rails.root}/#{row['image']}"),
+                genre: row["genre"],
                 title: row["title"],
                 content: row["content"]
-            
-          }
+            }
           end
-          puts "インポート処理を開始"
-        #   binding.pry
         Text.create!(list)
     end
 
