@@ -14,7 +14,16 @@ namespace :import_csv do
 
     desc "TEXTデータをインポートするタスク"
     task text: :environment do
-        list = Import.csv_data(path: "db/csv_data/text_data.csv")
+        list = []
+        path = File.join Rails.root, "db/csv_data/text_data.csv"
+        CSV.foreach(path, headers: true) do |row|
+            list << {
+                image: File.open("#{Rails.root}/#{row['image']}"),
+                genre: row["genre"],
+                title: row["title"],
+                content: row["content"]
+            }
+          end
         Text.create!(list)
     end
 
