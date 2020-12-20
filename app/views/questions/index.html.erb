@@ -1,0 +1,39 @@
+<div class="container">
+  <h1>新規投稿</h1>
+  <%= render 'layouts/error_messages' %>
+  <%= form_with model: @question, local: true do |form| %>
+    <div class="form-group">
+      
+        <%= form.label :title, "【質問】" %>
+        <%= form.text_area :title, class: "form-control" %>
+      </div>
+    
+    <div class="form-group">
+      <%= form.label :detail, "【詳細】" %>
+      <%= form.text_area :detail, class: "form-control", rows: 10 %>
+    </div>
+    <div>
+      <%= form.submit "送信", class: "btn btn-primary btn-block", data: { confirm: "新規投稿しますか？" } %>
+    </div>
+  <% end %>
+</div>
+<section id="questions">
+  <div class="container">
+    <% @questions.each do |question, i| %>
+    <div class="question-container">
+      <a href="/questions/<%= question.id %>/" rel="hover" class="button hover">
+        <div class="question">
+          <div class="row">
+            <div class="col-md-7">
+              <div class="title-container">
+                <%= question.title %>
+              </div>
+            </div>
+            <div class="col-md-5"></div>
+          </div>
+        </div>
+      </a>
+    </div>
+    <% end %>
+  </div>
+</section>

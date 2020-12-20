@@ -1,8 +1,12 @@
 class MoviesController < ApplicationController
 
-  
   def index
-      @movies = Movie.page(params[:page]).per(18).all
+    params[:genre]
+    if params[:genre].nil? 
+      @movies = Movie.where(genre: ["Ruby on Rails", "Git","Basic","Ruby"]).page(params[:page]).per(18)
+    else
+      @movies = Movie.where(genre: params[:genre]).page(params[:page]).per(18)
+    end
   end
 
   def show
