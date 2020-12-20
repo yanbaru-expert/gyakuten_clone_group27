@@ -1,17 +1,20 @@
 <div class="texts-wrapper">
   <h2 class="text-center">テキスト教材</h2>
   <%# 検索窓 %>
-  <div class="search-area">
-    <form class="mb-3 search-form mx-auto">
-      <i class="fa fa-search search-icon" title="Search"></i>
-      <input type="text" id="search-text" class="form-control search-text"
-        placeholder="教材を探す" aria-label="Username" aria-describedby="search-form">
-    </form>
-    <div class="search-result">
-        <div class="search-result__hit-num"></div>
-        <div id="search-result__list"></div>
+  <form class="mb-3 search-form mx-auto">
+  <div id="search-text">
+    <%= search_form_for @eq do |f| %>
+      <div class="d-flex">
+        <div class="form-group flex-grow-1">
+          <%= f.search_field :title_cont, placeholder: "教材を探す", class: "form-control" %>
+        </div>
+        <div>
+          <%= f.submit "検索", class: "btn btn-primary ml-1" %>
+        </div>
       </div>
+    <% end %>
   </div>
+  </form>
   <%# ここまで %>
   <div class="row">
     <% @texts.each do |text, i| %>
@@ -47,47 +50,3 @@
     <% end %>
   </div>
 </div>
-
-
-<script>
-searchWord = function(){
-  var searchResult,
-      searchText = $(this).val(), // 検索ボックスに入力された値
-      targetText,
-      hitNum;
- 
-  // 検索結果を格納するための配列を用意
-  searchResult = [];
- 
-  // 検索結果エリアの表示を空にする
-  $('#search-result__list').empty();
-  $('.search-result__hit-num').empty();
- 
-  // 検索ボックスに値が入ってる場合
-  if (searchText != '') {
-    $('.target-area').each(function() {
-      targetText = $(this).text();
- 
-      // 検索対象となるリストに入力された文字列が存在するかどうかを判断
-      if (targetText.indexOf(searchText) != -1) {
-        // 存在する場合はそのリストのテキストを用意した配列に格納
-        searchResult.push(targetText);
-      }
-    });
- 
-    // 検索結果をページに出力
-    for (var i = 0; i < searchResult.length; i ++) {
-      $('<span>').text(searchResult[i]).appendTo('#search-result__list');
-    }
- 
-    // ヒットの件数をページに出力
-   
-    hitNum = $('@texts');
-    $('.search-result__hit-num').append(hitNum);
-  }
-};
- 
-// searchWordの実行
-$('#search-text').on('input', searchWord);
-
-</script>
