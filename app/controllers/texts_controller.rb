@@ -1,11 +1,11 @@
 class TextsController < ApplicationController
   def index
-   
     if params[:genre].nil? 
-      @texts = Text.where(genre: ["Ruby on Rails", "Git","Basic","Ruby"])
+      @eq = Text.where(genre: ["Ruby on Rails", "Git","Basic","Ruby"]).ransack(params[:q])
     else
-      @texts = Text.where(genre: params[:genre])
+      @eq = Text.where(genre: params[:genre]).ransack(params[:q])
     end
+      @texts = @eq.result.order(:id)
   end
 
   def show
