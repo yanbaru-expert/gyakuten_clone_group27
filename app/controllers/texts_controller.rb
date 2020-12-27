@@ -1,6 +1,5 @@
 class TextsController < ApplicationController
   def index
-    # binding.pry
     if params[:genre].nil? 
       @eq = Text.where(genre: ["Ruby on Rails", "Git","Basic","Ruby"]).ransack(params[:q])
     else
