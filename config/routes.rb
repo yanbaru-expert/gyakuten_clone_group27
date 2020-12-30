@@ -10,5 +10,7 @@ Rails.application.routes.draw do
   resources :lines, only: [:index, :show]
   resources :aws_texts
   resources :questions
-  resources :movies, only: [:index, :show]
+  resources :movies, only: [:index, :show] do
+    resource :watched_movies, only: [:create, :destroy]
+  end
 end
