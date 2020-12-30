@@ -9,6 +9,15 @@
             </div>
           </div>
           <div class="card-body text-dark movie-body">
+            <div id="read-text-186">
+              <object>
+                <% if text.read_by?(current_user) %>
+                  <%= link_to "読破済みを解除する", text_read_texts_path(text), class: "btn btn-primar btn-block", method: :delete %>
+                <% else %>
+                  <%= link_to "読破済みにする", text_read_texts_path(text), class: "btn btn-secondary btn-block", method: :post %>
+                <% end %>
+              </object>
+            </div>
             <p class="card-text"><%= movie.title %></p>
           </div>
         </div>
