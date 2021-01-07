@@ -1,10 +1,9 @@
 class ReadTextsController < ApplicationController
 
   def create
+    # binding.pry
     @text = Text.find(params[:text_id])
     current_user.read_texts.create!(text_id: @text.id)
-    # current_user.read_texts.create!(text_id: params[:text_id])
-    # redirect_back(fallback_location: root_path)
   end
 
   def destroy
