@@ -33,9 +33,9 @@
             <div id="read-text-<%= text.id%>">
               <object>
                 <% if text.read_by?(current_user) %>
-                  <% render "read_delete", text: text %>
+                  <%= render "read_delete", text: text %>
                 <% else %>
-                  <% render "read_post", text: text %>
+                  <%= render "read_post", text: text %>
                 <% end %>
               </object>
             </div>
