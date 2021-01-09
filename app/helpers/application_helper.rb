@@ -55,4 +55,12 @@ module ApplicationHelper
         "mw-md"
       end
   end
+
+  def background_color
+    if controller_name.in?(%w[ lines])
+        "bg-success"
+    else
+        "bg-primary"
+    end
+  end
 end
