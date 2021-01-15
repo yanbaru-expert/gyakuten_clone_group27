@@ -6,4 +6,5 @@ class User < ApplicationRecord
   has_many :texts, dependent: :destroy
   has_many :read_texts, dependent: :destroy
   has_many :watched_movies, dependent: :destroy
+  has_many :events
 end
