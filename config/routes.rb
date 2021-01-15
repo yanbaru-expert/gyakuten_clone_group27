@@ -13,4 +13,5 @@ Rails.application.routes.draw do
   resources :movies, only: [:index, :show] do
     resource :watched_movies, only: [:create, :destroy]
   end
+  resources :events
 end
