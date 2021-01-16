@@ -13,6 +13,7 @@ class EventsController < ApplicationController
   end
 
   def create
+    binding.pry
     Event.create(event_params)
     redirect_to events_path
   end
@@ -39,6 +40,6 @@ class EventsController < ApplicationController
   private
 
   def event_params
-    params.require(:event).permit(:title, :content, :start_time)
+    params.require(:event).permit(:title, :body, :start_time)
   end
 end
