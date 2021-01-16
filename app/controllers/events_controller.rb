@@ -13,9 +13,12 @@ class EventsController < ApplicationController
   end
 
   def create
-    binding.pry
-    Event.create(event_params)
-    redirect_to events_path
+    @event = Event.create(event_params)
+    if @event.save!
+      redirect_to events_path, notice: 'リストを作成しました'
+    else
+      render :new
+    end
   end
 
   def destroy
@@ -40,6 +43,6 @@ class EventsController < ApplicationController
   private
 
   def event_params
-    params.require(:event).permit(:title, :body, :start_time)
+    params.require(:event).permit(:title, :content, :start_time)
   end
 end
