@@ -14,9 +14,10 @@ class EventsController < ApplicationController
 
   def create
     @event = Event.create(event_params)
-    if @event.save!
+    if @event.save
       redirect_to events_path, notice: 'リストを作成しました'
     else
+      flash.now[:alert] = "#{@event.errors.messages.length}つ空欄です。"
       render :new
     end
   end
