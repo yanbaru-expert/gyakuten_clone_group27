@@ -1,23 +1,22 @@
 <%= form_with(model: @event, local: true) do |form| %>
 
-  <div class="title">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
+  <div class="form-group">
+    <%= form.label :title, "タイトル" %>
+    <%= form.text_field :title, class: "form-control" %>
   </div>
 
-    <div class="time">
-    <%= form.label :start_time %>
+    <div class="form-group">
+    <%= form.label :start_time, "時刻" %>
     <%= form.datetime_select :start_time %>
   </div>
 
-  <div class="content">
-    <%= form.label :content %>
-    <%= form.text_field :content %>
+  <div class="form-group">
+    <%= form.label :content, "内容" %>
+    <%= form.text_area :content, class: "form-control", rows: 10 %>
   </div>
 
-
-  <div class="submit">
-    <%= form.submit %>
+  <div>
+    <%= form.submit "送信", class: "btn btn-primary btn-block" %>
   </div>
 
 <% end %>
