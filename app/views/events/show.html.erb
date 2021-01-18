@@ -6,8 +6,9 @@
     <%= @event.title %>
   </div>
   <div class="time">
-    <h5>【時間】</h5>
-    <%= l @event.start_time, format: :long %>
+    <h5>【時刻】</h5>
+    <%= l @event.start_time, format: :long %><br>
+    <%= l @event.end_time , format: :long %>
   </div>
   <div class="content">
     <h5>【内容】</h5>
