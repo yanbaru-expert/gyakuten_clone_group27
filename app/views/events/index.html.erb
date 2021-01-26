@@ -1,5 +1,6 @@
 <h1 style="text-align: center;">やんばるCODE イベント日程</h1>
 <br>
+
 <%= month_calendar events: @events do |date, events| %>
   <%= date.day %>
   <% events.each do |event|%>

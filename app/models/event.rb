@@ -17,11 +17,11 @@ class Event < ApplicationRecord
     end
   end
 
-  # def start_check
-  #   if self.start_time < Date.today
-  #   errors.add(:start_time, "は過去の日付を選択できません") 
-  #   end
-  # end
+  def start_check
+    if self.start_time < Date.today
+    errors.add(:start_time, "は過去の日付を選択できません") 
+    end
+  end
 
   # def start_future
   #   Time.current ==
