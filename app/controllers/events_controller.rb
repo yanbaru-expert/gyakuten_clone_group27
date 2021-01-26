@@ -13,9 +13,11 @@ class EventsController < ApplicationController
   end
 
   def create
-    binding.pry
+    # binding.pry
+    # @event = Event.new(event_params)
     @event = Event.create(event_params)
-    if @event.save
+    if @event[:start_day] != Time.current 
+      @event.save
       redirect_to events_path, notice: 'リストを作成しました'
     else
       flash.now[:alert] = "#{@event.errors.messages.length}つ空欄です。"
