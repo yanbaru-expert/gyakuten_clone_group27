@@ -13,13 +13,13 @@ class EventsController < ApplicationController
   end
 
   def create
-   binding.pry
+  
     @event = Event.new(event_params)
-    d = @event.start_day
+    d = @event.start_day.values
     s = @event.start_time
     e = @event.end_time
-    Time.zone.local(d.year, d.mon, d.day, s.hour, s.min)
-    Time.zone.local(d.year, d.mon, d.day, e.hour, e.min)
+    @event.start_time = Time.zone.local(d[0], d[1], d[2], s.hour, s.min)
+    @event.end_time = Time.zone.local(d[0], d[1], d[2], e.hour, e.min)
     # timezone = @event.start_day + @event.start_time
     # timezone
     # @event.start_time = @event.start_day
@@ -30,6 +30,7 @@ class EventsController < ApplicationController
     # binding.pry
     # @event.start_time.save
     # @event.end_time.save
+    # binding.pry
     if @event.save
       redirect_to events_path, notice: 'リストを作成しました'
     else
