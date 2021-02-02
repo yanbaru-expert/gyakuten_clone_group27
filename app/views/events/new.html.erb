@@ -7,13 +7,13 @@
 
     <div class="form-group">
     <%= form.label :start_day, "時刻" %>
-    <%= form.date_select :start_day, {discard_year: true}, class: "form-control",ignore_data:true%><br>
+    <%= form.date_select :start_day, {discard_year: true}, user_month_numbers: true, start_year: 1930, end_year: (Time.now.year - 10), default: Date.new(1989, 1, 1), class: "form-control", ignore_data: true %><br>
     </div> 
 
     <div class="form-group">
-    <%= form.datetime_select :start_time, class: "form-control", ignore_data:true%>
+    <%= form.time_select :start_time,  class: "form-control" %>
     ~
-    <%= form.datetime_select :end_time, class: "form-control", ignore_data:true %>
+    <%= form.time_select :end_time, ignore_data:true, class: "form-control" %>
     </div>
 
   <div class="form-group">

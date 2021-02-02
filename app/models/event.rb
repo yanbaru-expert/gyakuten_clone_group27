@@ -1,4 +1,6 @@
 class Event < ApplicationRecord
+  attr_accessor :start_day
+
   validates :title, :content, presence: true
   validates :start_time, :end_time, :start_day,  presence: true
 
@@ -23,6 +25,9 @@ class Event < ApplicationRecord
     end
   end
 
+  # def start_day 
+  #   start_day(1..3)
+  # end
   # def start_future
   #   Time.current ==
   # end

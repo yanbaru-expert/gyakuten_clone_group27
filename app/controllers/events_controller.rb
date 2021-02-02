@@ -13,9 +13,24 @@ class EventsController < ApplicationController
   end
 
   def create
-    @event = Event.create(event_params)
-    if @event[:start_day] != Time.current 
-      @event.save
+   binding.pry
+    @event = Event.new(event_params)
+    d = @event.start_day
+    s = @event.start_time
+    e = @event.end_time
+    Time.zone.local(d.year, d.mon, d.day, s.hour, s.min)
+    Time.zone.local(d.year, d.mon, d.day, e.hour, e.min)
+    # timezone = @event.start_day + @event.start_time
+    # timezone
+    # @event.start_time = @event.start_day
+    # @event.end_time = @event.start_day
+    # @event.start_time.to_i = @event.start_day
+    # @event.end_time = @event.start_day{1..3}
+    # @evevt
+    # binding.pry
+    # @event.start_time.save
+    # @event.end_time.save
+    if @event.save
       redirect_to events_path, notice: 'リストを作成しました'
     else
       flash.now[:alert] = "#{@event.errors.messages.length}つ空欄です。"
