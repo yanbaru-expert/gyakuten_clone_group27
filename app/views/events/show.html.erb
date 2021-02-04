@@ -1,6 +1,4 @@
-<p id="notice"><%= notice %></p>
 
-<div class="base-container mw-md">
   <div class="title">
     <h5>【タイトル】</h5>
     <%= @event.title %>
@@ -17,7 +15,41 @@
     <%= @event.content %>
   </div>
 
+  
+
 <%= link_to '編集', edit_event_path(@event.id) %> |
 <%= link_to '削除', event_path(@event.id), method: :delete, data: {confirm: '削除しても良いですか？'}%>|
 <%= link_to '戻る', events_path %>
-</div>
+
+
+<div class="container">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>タイトル</th>
+            <th>日付</th>
+            <th>開始</th>
+            <th>終了</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><%= @event.title %></td>
+            <td><%= l @event.start_time, format: :year %></td>
+            <td><%= l @event.start_time, format: :middle %></td>
+            <td><%= l @event.end_time , format: :middle %></td>
+          </tr>
+        </tbody>
+      </table>
+      
+      <table>
+      <div class="mx-auto">
+      <div>
+        <h2>内容</h2>
+      </div>
+      </div>
+      <tr>
+      <td> <%= @event.content %></td>
+     </tr>
+     </table>
+    </div>
