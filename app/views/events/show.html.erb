@@ -1,0 +1,27 @@
+<div class="container">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>タイトル</th>
+        <th>日付</th>
+        <th>開始</th>
+        <th>終了</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><%= @event.title %></td>
+        <td><%= l @event.start_time, format: :year %></td>
+        <td><%= l @event.start_time, format: :middle %></td>
+        <td><%= l @event.end_time , format: :middle %></td>
+      </tr>
+    </tbody>
+  </table>
+  <hr>
+    <h3 style="text-align: center;">【内容】</h3>
+    <%= @event.content %>
+  <hr>
+  <%= link_to '編集', edit_event_path(@event.id) %> |
+  <%= link_to '削除', event_path(@event.id), method: :delete, data: {confirm: '削除しても良いですか？'}%>|
+  <%= link_to '戻る', events_path %>
+</div>

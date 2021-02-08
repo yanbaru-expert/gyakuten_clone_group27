@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   devise_for :users
-  root to: "movies#index"
+  root to: "events#index"
   resources :texts do
     resource :read_texts, only: [:create, :destroy]
   end
@@ -13,4 +13,5 @@ Rails.application.routes.draw do
   resources :movies, only: [:index, :show] do
     resource :watched_movies, only: [:create, :destroy]
   end
+  resources :events
 end

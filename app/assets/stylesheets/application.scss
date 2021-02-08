@@ -1,5 +1,5 @@
-
 @import "bootstrap/scss/bootstrap";
+@import "simple_calendar";
 .base-container {
   @extend .container-fluid;
   padding-top: 7%;
@@ -107,3 +107,4 @@ div.field_with_errors {
 a:hover {
   text-decoration: none;
 }
+

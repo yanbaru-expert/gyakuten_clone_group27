@@ -1,0 +1,28 @@
+
+<%= form_with(model: @event, local: true) do |form| %>
+  <div class="form-group">
+    <%= form.label :title, "タイトル" %>
+    <%= form.text_field :title, class: "form-control" %>
+  </div>
+
+    <div class="form-group">
+    <%= form.label :start_day, "時刻" %>
+    <%= form.date_select :start_day, start_year: 2021, end_year: (Time.now.year + 10), class: "form-control", ignore_data: true %><br>
+    </div> 
+
+    <div class="form-group">
+    <%= form.time_select :start_time,  class: "form-control" %>
+    ~
+    <%= form.time_select :end_time, ignore_data:true, class: "form-control" %>
+    </div>
+
+  <div class="form-group">
+    <%= form.label :content, "内容" %>
+    <%= form.text_area :content, class: "form-control", rows: 10 %>
+  </div>
+
+  <div>
+    <%= form.submit "送信", class: "btn btn-primary btn-block" %>
+  </div>
+
+<% end %>
