@@ -17,8 +17,8 @@ class EventsController < ApplicationController
     d = @event.start_day.values
     s = @event.start_time
     e = @event.end_time
-    @event.start_time = Time.zone.local(d[0], d[1], d[2], s.hour, s.min)
-    @event.end_time = Time.zone.local(d[0], d[1], d[2], e.hour, e.min)
+    @event.start_time = Time.zone.local(*d, s.hour, s.min)
+    @event.end_time = Time.zone.local(*d, e.hour, e.min)
     if @event.save
       redirect_to events_path, notice: 'リストを作成しました'
     else
