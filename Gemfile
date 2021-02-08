@@ -22,7 +22,7 @@ gem 'ransack'
 gem 'activeadmin'
 
 # markdown
-gem 'redcarpet', '~> 2.3.0'
+gem 'redcarpet', '~> 3.5.1'
 # シンタックスハイライト
 gem 'coderay'
 
